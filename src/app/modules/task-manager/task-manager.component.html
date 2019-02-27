@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col">
+    <button [routerLink]="['/login']" mat-flat-button color="warn">Logout</button>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col">
+    <app-task-form (taskInput)="taskInputToggle($event)"></app-task-form>
+  </div>
+</div>
+
+<hr />
+
+<div class="row">
+  <div class="col">
+    <app-task-list></app-task-list>
+  </div>
+</div>

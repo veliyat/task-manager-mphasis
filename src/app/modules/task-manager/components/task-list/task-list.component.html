@@ -1,0 +1,19 @@
+<div class="alert alert-info" *ngIf="tasks.length === 0; else taskList">
+  No Tasks to display.
+</div>
+
+<ng-template #taskList>
+  <div class="card">
+    <div class="card-body">
+      <input type="text" placeholder="Search Here..." class="form-control" [(ngModel)]="query">
+    </div>
+  </div>
+
+  <hr />
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of tasks | search:query">
+      <app-task-item [taskItem]="task"></app-task-item>
+    </li>
+  </ul>
+</ng-template>

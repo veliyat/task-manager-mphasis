@@ -1,0 +1,16 @@
+<form #taskForm='ngForm' (ngSubmit)="taskForm.valid && addTask(); taskForm.resetForm(); handleInput(task);">
+
+  <div class="form-group">
+    <mat-form-field>
+
+      <input matInput placeholder="Add Task..." [(ngModel)]="model.task" name="task" #task="ngModel" required
+        (input)="handleInput(task)" />
+
+      <mat-error>Task can not be blank.</mat-error>
+
+    </mat-form-field>
+  </div>
+
+  <button [disabled]="taskForm.invalid" mat-flat-button color="primary">Add</button>
+
+</form>

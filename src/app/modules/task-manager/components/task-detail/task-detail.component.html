@@ -1,0 +1,17 @@
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
+
+<div *ngIf="task; else loading" class="card">
+  <div class="card-body">
+    <p>
+      <strong>Title</strong> {{ task.title | myUppercase }}
+    </p>
+
+    <p>
+      <strong>Date</strong> {{ task.date | date | uppercase }}
+    </p>
+  </div>
+</div>
+
+<button [routerLink]="['/tasks']" class="btn btn-link">Back to tasks</button>

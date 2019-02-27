@@ -1,0 +1,5 @@
+<p>
+  <span [appCompleted]="task.completed">{{task.title}}</span>
+  <button [routerLink]="['/tasks', task.id]" class="btn btn-info float-right">Detail</button>
+  <button [ngStyle]="{ marginRight: '4px' }" class="btn btn-danger float-right" (click)="handleDelete()">X</button>
+</p>
